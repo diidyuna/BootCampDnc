@@ -6,20 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootcamp DNC</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+     
+
+    :root{
+        --azul-dnc: #0C70F2 ;
+        --preto-dnc: #303030;
+        --cinza-dnc: #C9C9C9;
+
+        --fonte-padrao:"Inter";
+    }    
+        
+        
         body{
             margin: 0px; /* Margem Externar*/
             padding: 0px;  /* Margem Internar*/
+            background: linear-gradient(180deg, rgba(12, 112, 242, 0.5) 19.91%, rgba(12, 112, 242, 0) 24.84%), #303030;
+            background-repeat: no-repeat;
         }
         #principal{
             width: 100%;
             height: 100px;
             border: 1px solid black;
-            background-color: #303030;
+            background-color: var(--preto-dnc);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid hwb(0 19% 81%);
+            border-bottom: 1px solid #BABABA;
         }
         #menu {
             display: flex;
@@ -29,12 +42,13 @@
             margin-left: 5%;
         }
         #principal div a {
-            font-family: "Inter";
+            font-family: var(--fonte-padrao);
             text-decoration: none;
             color: #FFF;
             font-size: 25px;
             font-weight: 600;
-            line-height: 30.26px;
+            
+           
         }
         #principal div a:hover{
             color:#CCC;
@@ -42,14 +56,14 @@
         #principal button {
             width: 95px;
             height: 40px;
-            background-color: #0C70F2 ;
+            background-color: var(--azul-dnc);
             border: 0;
             color: #FFF;
-            font-family: "Inter";
+            font-family: var(--fonte-padrao);
             font-weight: 600;
             font-size: 20px;
             line-height: 24.2px;
-            margin-right: 5%;
+            margin-right: 4%;
             box-shadow: 3px 2px 4px rgba(12,112,242, 0.25 );
             cursor: pointer;
             
@@ -60,6 +74,100 @@
             transition:0.5s;
             box-shadow: 0px 20px 40px #0c70f25e ;  
         }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        header{
+            color: white;
+            font-family: var(--fonte-padrao);
+        }
+
+        header h1{
+            text-transform: uppercase;
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 96.82px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h2{
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 48.41px;
+            text-align: center;
+            margin-bottom: 100px;
+            
+        }
+
+        header h2 span {
+            background-color: black; /* na aula o prof colocou uma class, mas podemos eslilizar o span com a hierarquia das tags */
+            font-weight: bold;
+        }
+        /* fomulario */
+        form{
+            color: #FFF;
+            font-family: var(--fonte-padrao);
+            font-size: 30px;
+            font-weight: 600;
+            width: 600px;
+        }
+        .formGroup{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        form input { 
+            border-radius: 10px;
+            height: 30px;
+            border: 0;
+            font-size: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        form label {
+            margin: 10px 0px 10px 0px;
+        } 
+
+        form input::placeholder{
+            color: rgba(57, 57, 57, 0.5);
+           
+        }
+        .checkboxItens label {
+            font-size: 25px;
+        }
+        .checkboxItens{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        } 
+
+        input[type="checkbox"]{
+            transform: scale(1.7);
+        }
+        input[type="submit"]{
+            background-color: rgba(12, 112, 242, 0.9);
+            width: 100%;
+            height: 56px;
+            font-size: 32px;
+            color: #FFF;
+            margin-top:100px ;
+            box-shadow: 0px 6px 4px rgba(12,112,242, 0.25) ;
+            cursor: pointer;
+            
+        }
+
+
+        
+
+
     </style>
 </head>
 <body>
@@ -71,6 +179,53 @@
         </div>
         <button href="">Login</button>
     </nav>
+
+    <section>
+        <header>
+            <h1>BOOTCAMP DNC</h1>
+            <h2>Esse será um evento exclusivo para todos os alunos<br>
+                da <b>DNC</b>, que querem <span class="invert">acelerar a carreira</span> com uma<br>
+                semana intensiva de conteúdo de mercado entre<br>
+                <span class="invert">BACK-END, FRONT-END & BANCO DE DADOS.</span></h2>
+        </header> 
+        <form>
+            <div class="formGroup">
+                <label>Nome:</label>
+                <input type="text" placeholder="Insira seu nome aqui">
+            </div>
+            <div class="formGroup">
+                <label>Sobrenome:</label>
+                <input type="text" placeholder="Insira seu sobrenome aqui">
+            </div>
+            <div class="formGroup">
+                <label>Área de interesse:</label>
+                    <div class="checkboxItens">
+                        <input type="checkbox" value="front">
+                        <label>Front-End</label>
+
+                        <input type="checkbox" value="back">
+                        <label>Back-End</label>
+
+                        <input type="checkbox" value="bd">
+                        <label>Banco de Dados</label>
+                    </div>
+            </div>
+            <div class="formGroup">
+                <label>E-mail:</label>
+                <input type="email" placeholder="Insira seu e-mail aqui">
+            </div>
+            <div class="formGroup">
+                <label>Telefone:</label>
+                <input type="number" placeholder="(99) 99999-9999">
+            </div>
+            <div class="formGroup">
+                <label>Insira uma frase criativa aqui:</label>
+                <input type="text" placeholder="Qual frase criativa você gostaria de falar? :)">
+            </div>
+            <input type="submit" value="Cadastrar">
+            
+        </form>    
+    </section>
     
 
     
