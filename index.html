@@ -13,11 +13,9 @@
         --azul-dnc: #0C70F2 ;
         --preto-dnc: #303030;
         --cinza-dnc: #C9C9C9;
-
         --fonte-padrao:"Inter";
+        --cinza-hover: #CCC;
     }    
-        
-        
         body{
             margin: 0px; /* Margem Externar*/
             padding: 0px;  /* Margem Internar*/
@@ -39,7 +37,7 @@
             width: 55%;
             justify-content:space-around;
             align-items: center;
-            margin-left: 5%;
+            margin-left: 3%;
         }
         #principal div a {
             font-family: var(--fonte-padrao);
@@ -48,7 +46,6 @@
             font-size: 25px;
             font-weight: 600;
             
-           
         }
         #principal div a:hover{
             color:#CCC;
@@ -63,7 +60,7 @@
             font-weight: 600;
             font-size: 20px;
             line-height: 24.2px;
-            margin-right: 4%;
+            margin-right: 5%;
             box-shadow: 3px 2px 4px rgba(12,112,242, 0.25 );
             cursor: pointer;
             
@@ -86,7 +83,6 @@
             color: white;
             font-family: var(--fonte-padrao);
         }
-
         header h1{
             text-transform: uppercase;
             font-size: 80px;
@@ -95,14 +91,11 @@
             margin-bottom: 20px;
             text-align: center;
         }
-
         header h2{
             font-weight: 400;
             font-size: 40px;
-            line-height: 48.41px;
             text-align: center;
-            margin-bottom: 100px;
-            
+            margin-bottom: 100px;  
         }
 
         header h2 span {
@@ -161,13 +154,139 @@
             margin-top:100px ;
             box-shadow: 0px 6px 4px rgba(12,112,242, 0.25) ;
             cursor: pointer;
-            
+        }
+        input[type="submit"]:hover{
+            background-color: #4696ffdc;
+            transform: translateY(-3px);
+            transition:0.5s;
+            box-shadow: 0px 20px 40px #0c70f25e;  
+        } 
+        /*Footer */
+        footer{
+            width: 100%;
+            background-color: var(--azul-dnc);
         }
 
+        footer .linha1{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-        
+        footer ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;  
+            font-size: 25px;
+            
+        }
+        footer nav{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 330px;
+        }
 
+        footer h5{
+            text-align: center;
+            color: #FFF;
+            font-weight: 800;
+            font-size: 18px;
+            font-family: var(--fonte-padrao); 
+            background: var(--preto-dnc);
+            border-radius: 10px;
+            padding: 10px 10px 10px 10px ;
+            margin-bottom: 7px;
 
+        }
+
+        footer ul li{
+            text-align: center;
+            color: #FFF;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: var(--fonte-padrao); 
+
+            margin: 20px 0px 5px 0px ;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration:none ;
+        }
+        footer ul li a:hover{
+            color:#CCC;
+        }
+        footer .endereco{
+            font-weight: 600;
+            font-size: 18px;
+            font-family: var(--fonte-padrao);
+            color: #FFF;
+            text-align: center;
+            width: 20%;
+        }
+        footer .linha2{
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            margin: 0px;
+            padding: 10px;
+        }
+        footer .linha2 a{
+            font-family: var(--fonte-padrao);
+            font-size: 18px;
+            font-weight: 600;
+            color: #FFF;
+            text-decoration: none;
+            padding: 5px;
+        }
+        footer .linha2 a:first-child{
+            border-right: 3px solid white;
+        }
+        footer .linha2 a:hover{
+            color: var(--cinza-hover);
+        }
+
+    @media only screen and (max-width: 600px){
+
+        #principal{
+            
+            flex-direction: column;
+            height: auto;
+        }
+        #menu{
+            flex-direction: column;
+            width: 100%;
+            padding: 0px;
+        }
+
+        #menu a{
+            display:flex;
+            height: 50px;
+            align-items: center;
+        }
+
+        #principal button{
+            width: 100%; 
+            margin: 0px;
+        }
+        /* section*/
+        section h1{
+            font-size: 38px;
+        }
+        section h2{
+            font-size: 28px;
+            padding-right:15px ;
+            padding-left: 15px ;
+        }
+        form{
+            width: 95%;
+            font-size: 20px;
+        }
+        .checkboxItens label{
+            font-size: 17px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -179,7 +298,6 @@
         </div>
         <button href="">Login</button>
     </nav>
-
     <section>
         <header>
             <h1>BOOTCAMP DNC</h1>
@@ -223,9 +341,49 @@
                 <input type="text" placeholder="Qual frase criativa você gostaria de falar? :)">
             </div>
             <input type="submit" value="Cadastrar">
-            
         </form>    
     </section>
+    <footer>
+        <div class="linha1">
+            <nav>
+                <h5>Escolas</h5>
+                <ul>
+                    <li>
+                        <a href="">Formação em Tecnologia</a>
+                    </li>
+                    <li><a href="">Formação em Marketing</a>
+                    </li>
+                    <li><a href="">Formação em Dados </a>
+                    </li>
+                    <li><a href="">Formação em Projetos</a>
+                    </li>
+                    <li><a href="">Formação em Produto</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav>
+                <h5>Sobre a DNC</h5>
+                <ul>
+                    <li> <a href="">Historia</a></li>
+                    <li> <a href="">Missão e Valores</a>
+                    </li>
+                    <li> <a href="">Trabalhe Conosco</a>
+                    </li>
+                    <li> <a href="">Conteúdo Gratuito</a>
+                    </li>                       
+                </ul>
+
+            </nav>
+            <div class="endereco">
+                © 2022 DTC Treinamentos & Consultoria LTDA | CNPJ: 27.995.577/0001-37 | R. Justino Cobra, 61 – Vila Ema | São José dos Campos – SP | CEP 12243-030
+            </div>
+
+        </div>
+        <div class="linha2">
+            <a href="">Termos de Uso</a>
+            <a href="">Politica de Privacidade</a>
+        </div>
+    </footer>    
     
 
     
